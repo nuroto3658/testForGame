@@ -1,0 +1,12 @@
+{
+	"skins": {
+		"LoginPanel": "resource/app_skins/login/LoginPanel.exml",
+		"Game_1_View": "resource/eui_skins/Game_1_View.exml"
+	},
+	"autoGenerateExmlsList": true,
+	"exmls": [
+		"resource/app_skins/login/LoginPanel.exml",
+		"resource/eui_skins/Game_1_View.exml"
+	],
+	"path": "resource/default.thm.json"
+}
