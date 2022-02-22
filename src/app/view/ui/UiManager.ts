@@ -1,6 +1,0 @@
-class UiManager
-{
-	public constructor()
-	{
-	}
-}

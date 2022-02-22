@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="LevelViewSkin" width="1600" height="900" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="17f213fd9a9" ></w:Config>
+	    <e:Image id="BGImg" source="map_jpg" width="1600" height="900"  verticalCenter="0" horizontalCenter="0" />
+        <e:Group id="optionGP_1" x="335" y="200" width="145" height="130" ></e:Group>
+</e:Skin>

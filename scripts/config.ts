@@ -10,13 +10,11 @@ import { WebpackDevServerPlugin, WebpackBundlePlugin } from './plugins/webpack-p
 const config: ResourceManagerConfig = {
 
 
-    buildConfig: (params) =>
-    {
+    buildConfig: (params) => {
 
         const { target, command, projectName, version } = params;
 
-        if (command == 'build')
-        {
+        if (command == 'build') {
             const outputDir = 'bin-debug';
             return {
                 outputDir,
@@ -42,8 +40,7 @@ const config: ResourceManagerConfig = {
                 ]
             }
         }
-        else if (command == 'publish')
-        {
+        else if (command == 'publish') {
             const outputDir = `bin-release/web/${version}`;
             return {
                 outputDir,
@@ -73,8 +70,7 @@ const config: ResourceManagerConfig = {
                 ]
             }
         }
-        else if (command == 'run')
-        {
+        else if (command == 'run') {
             const outputDir = '.';
             return {
                 outputDir,
@@ -100,26 +96,21 @@ const config: ResourceManagerConfig = {
                 ]
             }
         }
-        else
-        {
+        else {
             throw `unknown command : ${params.command}`
         }
     },
 
-    mergeSelector: (path) =>
-    {
-        if (path.indexOf("assets/bitmap/") >= 0)
-        {
+    mergeSelector: (path) => {
+        if (path.indexOf("assets/bitmap/") >= 0) {
             return "assets/bitmap/sheet.sheet"
         }
-        else if (path.indexOf("armature") >= 0 && path.indexOf(".json") >= 0)
-        {
+        else if (path.indexOf("armature") >= 0 && path.indexOf(".json") >= 0) {
             return "assets/armature/1.zip";
         }
     },
 
-    typeSelector: (path) =>
-    {
+    typeSelector: (path) => {
         const ext = path.substr(path.lastIndexOf(".") + 1);
         const typeMap = {
             "jpg": "image",
@@ -134,13 +125,10 @@ const config: ResourceManagerConfig = {
             "exml": "text"
         }
         let type = typeMap[ext];
-        if (type == "json")
-        {
-            if (path.indexOf("sheet") >= 0)
-            {
+        if (type == "json") {
+            if (path.indexOf("sheet") >= 0) {
                 type = "sheet";
-            } else if (path.indexOf("movieclip") >= 0)
-            {
+            } else if (path.indexOf("movieclip") >= 0) {
                 type = "movieclip";
             };
         }
